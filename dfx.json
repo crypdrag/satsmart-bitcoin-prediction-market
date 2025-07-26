@@ -1,51 +1,30 @@
+cat > dfx.json << 'EOF'
 {
-  "version": 1,
   "canisters": {
     "satsmart_frontend": {
-      "type": "assets",
-      "source": ["dist/"],
-      "dependencies": ["satsmart_backend"]
+      "dependencies": [
+        "satsmart_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/satsmart_frontend/index.html"
+      },
+      "source": [
+        "src/satsmart_frontend/assets",
+        "dist/"
+      ],
+      "type": "assets"
     },
     "satsmart_backend": {
-      "type": "motoko",
-      "main": "src/satsmart_backend/main.mo"
-    },
-    "bitcoin_oracle": {
-      "type": "motoko", 
-      "main": "src/bitcoin_oracle/main.mo"
-    },
-    "betting_engine": {
-      "type": "motoko",
-      "main": "src/betting_engine/main.mo"
-    },
-    "dao_governance": {
-      "type": "motoko",
-      "main": "src/dao_governance/main.mo"
-    },
-    "sats_token": {
-      "type": "motoko",
-      "main": "src/sats_token/main.mo"
+      "main": "src/satsmart_backend/main.mo",
+      "type": "motoko"
     }
   },
-  "networks": {
-    "local": {
-      "bind": "127.0.0.1:4943",
-      "type": "ephemeral"
-    },
-    "ic": {
-      "providers": ["https://mainnet.dfinity.network"],
-      "type": "persistent"
-    },
-    "playground": {
-      "providers": ["https://playground.dfinity.network"],
-      "type": "playground"
-    }
-  },
-  "output_env_file": ".env",
   "defaults": {
     "build": {
       "args": "",
       "packtool": ""
     }
-  }
+  },
+  "version": 1
 }
+EOF
