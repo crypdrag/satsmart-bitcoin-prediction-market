@@ -1,355 +1,180 @@
 # 🚀 SatSmart - Bitcoin Prediction Market
 
-<div align="center">
+**A DAO-Controlled Bitcoin Oracle Prediction Market with Progressive Tiers and Educational Tooltips**
 
-![SatSmart Logo](https://via.placeholder.com/200x80/ea580c/ffffff?text=SATSMART)
-
-**A progressively tiered Bitcoin-centric prediction market platform**
-
-[![ICP](https://img.shields.io/badge/Built_on-Internet_Computer-29abe0?style=for-the-badge&logo=internetcomputer)](https://internetcomputer.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Motoko](https://img.shields.io/badge/Motoko-0066CC?style=for-the-badge&logo=motoko&logoColor=white)](https://motoko.org/)
-
-[🌐 Live Demo](https://satsmart.com) • [📚 Documentation](./docs) • [🚀 Deploy Guide](./DEPLOYMENT.md)
-
-</div>
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![ICP](https://img.shields.io/badge/Built_for-Internet_Computer-29abe0?style=for-the-badge&logo=internetcomputer)
 
 ---
 
-## 📖 About SatSmart
+## 🎯 Hackathon Demo Overview
 
-Satsmart is a progressively tiered Bitcoin-centric prediction market platform that transforms real-time blockchain data into educational betting experiences. The system progresses users from simple binary bets to sophisticated macro financial predictions while maintaining block-by-block Bitcoin timing as the core mechanic.
+**Bottom Line**: Convert Bitcoin volatility into educational entertainment with sustainable tokenomics and progressive complexity that scales from beginners to institutional-level macro analysis.
 
-**Satsmart's mission is** convert Bitcoin volatility into educational entertainment with sustainable tokenomics and progressive complexity that scales from Bitcoin beginners to institutional-level macro analysis.
-
-### 🎯 Core Value Proposition
-
-* **Educational-First**: Learn Bitcoin economics through prediction games
-* **Real-Time Data**: All bets resolve via actual Bitcoin block timestamps  
-* **Progressive Complexity**: Grow from simple BTC vs Gold to macro analysis
-* **Tooltips** help users navigate financial terminology without leaving the app
-
----
-
-## ✨ Features
-
-### 🌱 **Satoshi Tier (Beginner)**
-- Simple BTC vs Gold predictions
-- Interactive tooltips explaining Bitcoin basics
-- Animated rocket ship showing block mining progress
-- Binary YES/NO betting interface
-
-### 📈 **Stacker Tier (Intermediate)**  
-- Multi-asset battle royale (BTC, Gold, S&P 500, ETH)
-- Streak betting with multiplied payouts
-- Weekly leaderboards and social features
-- Bitcoin news and historical data
-
-### 🚀 **Maxi Tier (Advanced)**
-- Complex spreads: BTC vs DXY (Dollar Index)
-- Credit risk analysis with CDS spreads
-- Advanced risk metrics (Sharpe ratio, VaR, Beta)
-- Macro economic event calendar
-
-### 🏛️ **DAO Governance**
-- Internet Identity authentication
-- Community dispute resolution
-- SATS token staking for voting rights
-- Transparent governance proposals
+### 🌟 What This Demo Shows:
+- **Progressive 3-Tier System**: Satoshi (beginner) → Stacker (intermediate) → Maxi (advanced)
+- **Educational Tooltips**: Click `?` icons throughout for in-app financial education
+- **Bitcoin Wallet Integration**: Mock connections to Unisat, Xverse wallets
+- **Interactive Betting Interface**: Multi-currency betting (USD/BTC/sats) with live conversion
+- **Responsive Design**: Built with React + TypeScript + Tailwind CSS
+- **Live Block Animation**: Visual Bitcoin block mining progress simulation
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Full Vision & Technical Architecture
 
-### **Frontend Stack**
-- **React 18** + **TypeScript** for type-safe UI development
-- **Tailwind CSS** for responsive, utility-first styling
-- **Vite** for fast development and optimized builds
+### **Core Concept**
+Every new Bitcoin block, users predict whether BTC's price will rise or fall relative to traditional assets by block finalization time. UI-driven anticipation with visual feedback tied to actual Bitcoin block timing.
+
+### **Progressive Tier System**
+- **🌱 Satoshi Tier**: Simple BTC vs Gold predictions with educational tooltips
+- **📈 Stacker Tier**: Multi-asset battle royale (BTC, Gold, S&P 500, ETH) with streak betting
+- **🚀 Maxi Tier**: Complex spreads, credit risk analysis, macro economic indicators
+
+### **Core Logic Flow**
+The system tracks **3 most recent Bitcoin blocks**:
+1. **Current Bitcoin Block** (Block 03) - Active betting period
+2. **Latest Finalized Block** (Block 02) - Results determined  
+3. **Previous Finalized Block** (Block 01) - Historical comparison
+
+**Data Flow**: Block 03 → Block 02 → Block 01 → New Block 04 (continuous cycle)
+
+---
+
+## 🔧 Technical Implementation Plan
+
+### **Bitcoin Oracle Integration**
+- Fetch Bitcoin block headers and timestamps using ICP Bitcoin Integration
+- Use `get_block_headers` endpoint for persistent block data
+- Maintain 3-block rolling window for continuous operation
+
+### **Price Data Integration**
+Historical pricing via CoinGecko API using Bitcoin block timestamps for BTC, ETH, Gold (XAU), DXY, and S&P 500 data.
+
+### **DAO Governance** (Planned)
+- SNS webhooks for decentralized control
+- Token bonding for dispute resolution
+- Community-driven oracle validation
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend** (Demo Complete)
+- **React 18** + **TypeScript** for type-safe development
+- **Tailwind CSS** for responsive design
+- **Vite** for fast development and building
 - **Lucide React** for consistent iconography
 
-### **Backend Infrastructure (ICP Canisters)**
-- **Frontend Canister**: Serves static assets and UI
-- **Backend Canister**: Core business logic and data management
-- **Bitcoin Oracle**: Real-time Bitcoin price feeds and block data
-- **Betting Engine**: Bet placement, odds calculation, and payouts
-- **DAO Governance**: Proposal creation, voting, and dispute resolution
-- **SATS Token**: ICRC-1 compliant token for platform governance
-
-### **Key Technologies**
+### **Backend** (Architecture Planned)
 - **Internet Computer Protocol (ICP)** for decentralized hosting
-- **Motoko** for smart contract development
-- **Bitcoin Integration** for real-time blockchain data
-- **Internet Identity** for secure, anonymous authentication
+- **Motoko** smart contracts for betting logic
+- **Bitcoin Integration** for real-time block data
+- **CoinGecko API** for historical price feeds
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- **Node.js** 18+ and **npm**
-- **DFX** (Internet Computer SDK)
-- **Git** for version control
-
-### Installation
-
+### **Run the Demo Locally**
 ```bash
-# 1. Clone the repository
-git clone https://github.com/satsmart/bitcoin-prediction-market.git
-cd bitcoin-prediction-market
+# Clone the repository
+git clone https://github.com/crypdrag/satsmart-bitcoin-prediction-market.git
+cd satsmart-bitcoin-prediction-market
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Start local ICP replica
-dfx start --background
-
-# 4. Deploy canisters locally
-dfx deploy --network local
-
-# 5. Start development server
+# Start development server
 npm run dev
 ```
 
-Your app will be running at `http://localhost:5173` 🎉
+### **Demo Features**
+- 🎮 **Try all 3 tiers** - Experience progressive complexity
+- 🔍 **Click tooltip icons** - Learn financial concepts in-app
+- 💰 **Mock betting flow** - Test wallet connection and bet placement
+- 📱 **Responsive design** - Works on mobile and desktop
 
 ---
 
-## 📱 Usage Guide
+## 🎓 Educational Mission
 
-### **Getting Started**
-1. **Connect Wallet**: Use Unisat, Xverse, Leather, or OKX Bitcoin wallets
-2. **Choose Your Tier**: Start with Satoshi for basics, progress to Maxi for advanced features
-3. **Place Bets**: Select your prediction and bet amount (USD, BTC, or sats)
-4. **Learn**: Click `?` tooltips to understand financial concepts
-5. **Track Results**: Watch live Bitcoin block mining and bet resolution
+### **Key Learning Concepts**
+- **Bitcoin Fundamentals**: Block timing, mining, volatility
+- **Traditional Finance**: Gold (XAU), S&P 500, Dollar Index (DXY)
+- **Risk Metrics**: Sharpe ratio, VaR, correlation analysis
+- **Macro Economics**: Credit spreads, monetary policy impact
 
-### **Betting Flow**
-```
-Choose Tier → Connect Wallet → Select Prediction → Place Bet → Watch Block → Get Results
-```
-
-### **Tier Progression**
-- **Satoshi**: Master BTC vs Gold basics
-- **Stacker**: Explore multi-asset predictions and streaks  
-- **Maxi**: Dive into macro economics and risk analysis
+### **Progressive Learning Path**
+1. **Satoshi**: Learn basic BTC vs Gold concepts
+2. **Stacker**: Understand multi-asset correlations  
+3. **Maxi**: Master institutional-level analysis
 
 ---
 
-## 🛠️ Development
+## 🗺️ Development Roadmap
 
-### **Project Structure**
-```
-satsmart-bitcoin-prediction-market/
-├── src/
-│   ├── components/          # React components
-│   ├── hooks/              # Custom React hooks  
-│   ├── types.ts            # TypeScript definitions
-│   ├── utils.ts            # Utility functions
-│   └── satsmart_backend/   # Motoko backend canister
-├── dfx.json               # ICP configuration
-├── package.json           # Dependencies
-└── vite.config.ts         # Build configuration
-```
+### **Phase 1: Core Infrastructure** 
+- [ ] ICP canister deployment
+- [ ] Bitcoin oracle integration
+- [ ] Real-time price feeds
+- [ ] Basic betting mechanics
 
-### **Available Scripts**
-```bash
-npm run dev              # Start development server
-npm run build            # Build for production
-npm run preview          # Preview production build
-npm run type-check       # Run TypeScript checks
-npm run lint             # Run ESLint
-npm run format           # Format code with Prettier
+### **Phase 2: Advanced Features**
+- [ ] DAO governance implementation
+- [ ] Token economics and staking
+- [ ] Advanced risk metrics
+- [ ] Mobile app development
 
-dfx start               # Start local ICP replica
-dfx deploy              # Deploy canisters
-dfx generate            # Generate canister declarations
-```
-
-### **Key Components**
-- **MarketPage**: Main prediction interface with tier switching
-- **ActiveBlockCard**: Live Bitcoin block mining animation
-- **BettingModal**: Multi-currency bet placement interface
-- **TierToggle**: Progressive complexity tier selection
-- **Tooltip**: Educational explanations for financial terms
+### **Phase 3: Ecosystem Expansion**
+- [ ] Additional cryptocurrency markets
+- [ ] Institutional trader tools
+- [ ] Educational partnerships
+- [ ] Cross-chain integrations
 
 ---
 
-## 🚢 Deployment
+## 🏆 Hackathon Context
 
-### **Local Development**
-```bash
-dfx start --background
-dfx deploy --network local
-npm run dev
-```
+This project demonstrates:
+- **Technical Innovation**: Novel use of Bitcoin block timing for prediction markets
+- **Educational Value**: Progressive learning system with integrated tooltips
+- **User Experience**: Intuitive tier-based progression from beginner to expert
+- **Market Potential**: Scalable architecture for institutional and retail adoption
 
-### **ICP Mainnet**
-```bash
-# Build for production
-npm run build
-
-# Deploy to Internet Computer
-dfx deploy --network ic
-```
-
-For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)
-
----
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-npm test
-
-# Run integration tests
-npm run test:integration
-
-# Test canisters
-dfx canister call satsmart_backend greet "(\"Test User\")"
-```
+**Built for**: Internet Computer ecosystem hackathon showcasing Bitcoin integration and educational DeFi concepts.
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
-### **Development Workflow**
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### **Areas for Contribution**
+This is an open-source educational project. Contributions welcome for:
 - 🎨 UI/UX improvements
-- 🔧 Smart contract optimization  
+- 🔧 Smart contract development
 - 📊 Additional prediction markets
-- 🧪 Test coverage expansion
-- 📚 Documentation improvements
+- 📚 Educational content expansion
 
 ---
 
-## 📚 Documentation
+## 📞 Contact
 
-- [🏗️ Architecture Guide](./docs/ARCHITECTURE.md)
-- [🔌 API Reference](./docs/API.md)
-- [🚀 Deployment Guide](./docs/DEPLOYMENT.md)
-- [🧪 Testing Guide](./docs/TESTING.md)
-- [🎨 UI Components](./docs/COMPONENTS.md)
-
----
-
-## 🛡️ Security
-
-### **Smart Contract Security**
-- Multi-signature canister controllers
-- Upgrade governance through DAO voting
-- Rate limiting and access controls
-- Regular security audits
-
-### **User Security**
-- Non-custodial wallet integration
-- Internet Identity for privacy
-- No personal data collection
-- Open source transparency
-
-**🚨 Bug Bounty**: Report security issues to [security@satsmart.com](mailto:security@satsmart.com)
-
----
-
-## 🗺️ Roadmap
-
-### **Phase 1: MVP Launch** ✅
-- [x] Three-tier prediction system
-- [x] Bitcoin wallet integration
-- [x] Basic DAO governance
-- [x] ICP deployment
-
-### **Phase 2: Enhanced Features** 🔄
-- [ ] Real-time Bitcoin oracle integration
-- [ ] Advanced risk metrics
-- [ ] Mobile responsive design
-- [ ] Social features and leaderboards
-
-### **Phase 3: Ecosystem Expansion** 📋
-- [ ] Additional cryptocurrency markets
-- [ ] Options and futures predictions
-- [ ] Institutional trader tools
-- [ ] Cross-chain integrations
-
-### **Phase 4: Mainstream Adoption** 🎯
-- [ ] Educational partnerships
-- [ ] Gamification enhancements
-- [ ] Multi-language support
-- [ ] Traditional finance integrations
-
----
-
-## 📊 Tokenomics
-
-### **SATS Token Utility**
-- **Governance**: Vote on platform upgrades and parameters
-- **Staking**: Earn rewards for participating in dispute resolution
-- **Fee Discounts**: Reduced betting fees for token holders
-- **Liquidity Rewards**: Incentives for providing market liquidity
-
-### **Distribution**
-- 40% Community rewards and airdrops
-- 25% Development team (4-year vesting)
-- 20% Ecosystem development fund
-- 10% Early investors (2-year vesting)
-- 5% Liquidity provision
-
----
-
-## 📞 Support & Community
-
-### **Get Help**
-- 💬 [Discord Community](https://discord.gg/satsmart)
-- 🐦 [Twitter Updates](https://twitter.com/satsmart)
-- 📧 [Email Support](mailto:support@satsmart.com)
-- 📖 [Documentation](./docs)
-
-### **Community Guidelines**
-- Be respectful and educational-focused
-- Share knowledge about Bitcoin and economics
-- Report bugs and suggest improvements
-- Help newcomers learn the platform
+- **GitHub**: crypdrag
+- **Project**: Bitcoin prediction market with educational focus
+- **Built with**: React, TypeScript, ICP, Bitcoin educational entertainment in mind
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE) file for details.
-
-### **Open Source Philosophy**
-SatSmart believes in:
-- 🔓 **Transparent Development**: All code is open source
-- 🤝 **Community Ownership**: DAO governance for major decisions  
-- 🎓 **Educational Mission**: Knowledge sharing and financial literacy
-- 🌍 **Global Accessibility**: Permissionless and decentralized
-
----
-
-## 🙏 Acknowledgments
-
-- **Internet Computer Protocol** for decentralized hosting
-- **Bitcoin Core** developers for the blockchain foundation
-- **React & TypeScript** communities for excellent tooling
-- **Tailwind CSS** for beautiful, responsive design
-- **Our contributors** who make SatSmart possible
+MIT License - Built for the crypto education and DeFi community.
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by the SatSmart community**
+**🎓 Transforming Bitcoin volatility into educational entertainment 📈**
 
-*Transforming Bitcoin volatility into educational entertainment*
-
-[🌐 Website](https://satsmart.com) • [📱 App](https://app.satsmart.com) • [📚 Docs](./docs) • [💬 Discord](https://discord.gg/satsmart)
+*Built for hackathon - Full ICP deployment coming soon*
 
 </div>
